@@ -5,31 +5,45 @@ import net.minecraft.block.material.Material;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
-import darknewage.common.blocks.BaseBlock;
-import darknewage.common.blocks.BlockFluidPlasma;
-import darknewage.common.blocks.FluidPlasma;
-
 import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
+
+import darknewage.common.blocks.BaseBlock;
 
 public class InitBlocks
 {
 	public static Fluid plasmaFluid;
 	public static Block blockPlasma;
 
-	public static Block blockCeramic;
+	public static Block blockConcrete;
+
+	public static Block blockSteel, blockSteelPlating;
 
 	public static void init()
 	{
-		// Plasma
-		plasmaFluid = new FluidPlasma("plasma").setUnlocalizedName("plasmaFluid");
-		FluidRegistry.registerFluid(plasmaFluid);
+		/*
+		 * // Plasma plasmaFluid = new
+		 * FluidPlasma("plasma").setUnlocalizedName("plasmaFluid");
+		 * FluidRegistry.registerFluid(plasmaFluid);
+		 * 
+		 * blockPlasma = new BlockFluidPlasma(plasmaFluid,
+		 * Material.lava).setBlockName("plasmaFluidBlock");
+		 * GameRegistry.registerBlock(blockPlasma, "blockPlasma");
+		 * 
+		 * blockCeramic = new
+		 * BaseBlock(Material.rock).setBlockName("blockCeramic").setResistance(
+		 * 15.0F).setHardness(1.0F); GameRegistry.registerBlock(blockCeramic,
+		 * "BlockCeramic");
+		 */
 
-		blockPlasma = new BlockFluidPlasma(plasmaFluid, Material.lava).setBlockName("plasmaFluidBlock");
-		GameRegistry.registerBlock(blockPlasma, "blockPlasma");
+		blockConcrete = new BaseBlock(Material.rock).setBlockName("blockCeramic").setResistance(15.0F).setHardness(1.0F);
+		GameRegistry.registerBlock(blockConcrete, "BlockConcrete");
 
-		blockCeramic = new BaseBlock(Material.rock).setBlockName("blockCeramic").setResistance(15.0F).setHardness(1.0F);
-		GameRegistry.registerBlock(blockCeramic, "BlockCeramic");
+		blockSteel = new BaseBlock(Material.iron).setBlockName("blockSteel").setResistance(15.0F).setHardness(1.0F);
+		GameRegistry.registerBlock(blockSteel, "BlockSteel");
+
+		blockSteelPlating = new BaseBlock(Material.iron).setBlockName("blockSteelPlating").setResistance(15.0F).setHardness(1.0F);
+		GameRegistry.registerBlock(blockSteelPlating, "BlockSteelPlating");
+
 	}
 
 }

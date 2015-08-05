@@ -20,6 +20,8 @@ import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import darknewage.common.DarkNewAge;
+
 /**
  * @author Surseance
  *
@@ -30,7 +32,7 @@ public class BaseBlock extends Block
 	public BaseBlock(Material mat)
 	{
 		super(mat);
-		// this.setCreativeTab(Steamcraft.tabSC2);
+		this.setCreativeTab(DarkNewAge.tabDNA);
 		this.setHardness(0.5F);
 	}
 

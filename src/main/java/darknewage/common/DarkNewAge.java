@@ -1,5 +1,7 @@
 package darknewage.common;
 
+import net.minecraft.creativetab.CreativeTabs;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -15,12 +17,10 @@ import net.minecraftforge.common.config.Configuration;
 public class DarkNewAge
 {
 
-	// @SidedProxy(clientSide = "boilerplate.client.ClientProxy", serverSide =
-	// "boilerplate.common.CommonProxy")
-	// public static CommonProxy proxy;
-
 	@Instance("darknewage")
 	public static DarkNewAge instance;
+
+	public static CreativeTabs tabDNA = new CreativeTabDNA("darknewage");
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -36,6 +36,7 @@ public class DarkNewAge
 	public void init(FMLInitializationEvent event)
 	{
 		InitBlocks.init();
+		InitItems.init();
 	}
 
 	@EventHandler
